@@ -1,13 +1,16 @@
 ﻿using ZooManagment.DataAccess.Repositories;
+using ZooManagment.Domain.Interfaces;
+using ZooManagment.Domain.Interfaces.Repositories;
+using ZooManagment.Domain.Interfaces.Services;
 using ZooManagment.Domain.Models;
 
 namespace ZooManagment.Business.Services;
 
-public class SpecieService
+public class SpecieService : ISpecieService
 {
-    private SpecieRepository _specieRepository;
+    private ISpecieRepository _specieRepository;
 
-    public SpecieService(SpecieRepository specieRepository)
+    public SpecieService(ISpecieRepository specieRepository)
     {
         _specieRepository = specieRepository;
     }

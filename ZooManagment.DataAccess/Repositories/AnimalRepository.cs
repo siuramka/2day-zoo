@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ZooManagment.Domain.Interfaces.Repositories;
 using ZooManagment.Domain.Models;
 
 namespace ZooManagment.DataAccess.Repositories;
 
-public class AnimalRepository
+public class AnimalRepository : IAnimalRepository
 {
     private readonly ZooDbContext _dbContext;
 

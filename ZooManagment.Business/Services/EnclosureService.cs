@@ -1,16 +1,18 @@
 ﻿using ZooManagment.DataAccess.Repositories;
 using ZooManagment.Domain.Dtos.Enclosure;
+using ZooManagment.Domain.Interfaces.Repositories;
+using ZooManagment.Domain.Interfaces.Services;
 using ZooManagment.Domain.Models;
 
 namespace ZooManagment.Business.Services
 {
-    public class EnclosureService
+    public class EnclosureService : IEnclosureService
     {
-        private readonly EnclosureRepository _enclosureRepository;
-        private readonly LocationObjectRepository _locationObjectRepository;
+        private readonly IEnclosureRepository _enclosureRepository;
+        private readonly ILocationObjectRepository _locationObjectRepository;
 
-        public EnclosureService(EnclosureRepository enclosureRepository,
-            LocationObjectRepository locationObjectRepository)
+        public EnclosureService(IEnclosureRepository enclosureRepository,
+            ILocationObjectRepository locationObjectRepository)
         {
             _enclosureRepository = enclosureRepository;
             _locationObjectRepository = locationObjectRepository;
@@ -43,7 +45,7 @@ namespace ZooManagment.Business.Services
 
                 var enclosureLocationObject = new EnclosureLocationObject
                     { LocationObjectId = locationObject.Id, EnclosureId = enclosure.Id };
-                
+
                 enclosure.EnclosureLocationObjects.Add(enclosureLocationObject);
             }
 

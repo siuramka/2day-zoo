@@ -1,13 +1,14 @@
 ﻿using ZooManagment.DataAccess.Repositories;
+using ZooManagment.Domain.Interfaces.Repositories;
 using ZooManagment.Domain.Models;
 
 namespace ZooManagment.Business.Services.TransferTemplate;
 
 public class EnclosureTransferMeatEater : EnclosureTransferTemplate
 {
-    private EnclosureRepository _enclosureRepository;
+    private IEnclosureRepository _enclosureRepository;
 
-    public EnclosureTransferMeatEater(EnclosureRepository enclosureRepository) : base(enclosureRepository)
+    public EnclosureTransferMeatEater(IEnclosureRepository enclosureRepository) : base(enclosureRepository)
     {
         _enclosureRepository = enclosureRepository;
     }

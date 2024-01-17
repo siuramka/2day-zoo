@@ -1,17 +1,18 @@
 ﻿using ZooManagment.Business.Services.TransferTemplate;
 using ZooManagment.DataAccess;
 using ZooManagment.DataAccess.Repositories;
+using ZooManagment.Domain.Interfaces.Repositories;
 using ZooManagment.Domain.Models;
 
 namespace ZooManagment.Business.Services;
 
 public class TransferService
 {
-    private EnclosureRepository _enclosureRepository;
-    private AnimalRepository _animalRepository;
+    private IEnclosureRepository _enclosureRepository;
+    private IAnimalRepository _animalRepository;
     private ZooDbContext _dbContext;
 
-    public TransferService(EnclosureRepository enclosureRepository, AnimalRepository animalRepository,
+    public TransferService(IEnclosureRepository enclosureRepository, IAnimalRepository animalRepository,
         ZooDbContext dbContext)
     {
         _enclosureRepository = enclosureRepository;

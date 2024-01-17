@@ -1,20 +1,19 @@
 ﻿using ZooManagment.DataAccess.Repositories;
 using ZooManagment.Domain.Dtos.Animal;
+using ZooManagment.Domain.Interfaces.Repositories;
+using ZooManagment.Domain.Interfaces.Services;
 using ZooManagment.Domain.Models;
 
 namespace ZooManagment.Business.Services;
 
-public class AnimalService
+public class AnimalService : IAnimalService
 {
-    private AnimalRepository _animalRepository;
-    private TransferService _transferService;
-    private SpecieService _specieService;
+    private IAnimalRepository _animalRepository;
+    private ISpecieService _specieService;
 
-    public AnimalService(AnimalRepository animalRepository, TransferService transferService,
-        SpecieService specieService)
+    public AnimalService(IAnimalRepository animalRepository, ISpecieService specieService)
     {
         _animalRepository = animalRepository;
-        _transferService = transferService;
         _specieService = specieService;
     }
 

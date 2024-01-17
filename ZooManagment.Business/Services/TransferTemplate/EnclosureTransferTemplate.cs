@@ -1,13 +1,14 @@
 ﻿using ZooManagment.DataAccess.Repositories;
+using ZooManagment.Domain.Interfaces.Repositories;
 using ZooManagment.Domain.Models;
 
 namespace ZooManagment.Business.Services.TransferTemplate;
 
 public abstract class EnclosureTransferTemplate
 {
-    private EnclosureRepository _enclosureRepository;
+    private IEnclosureRepository _enclosureRepository;
 
-    protected EnclosureTransferTemplate(EnclosureRepository enclosureRepository)
+    protected EnclosureTransferTemplate(IEnclosureRepository enclosureRepository)
     {
         _enclosureRepository = enclosureRepository;
     }

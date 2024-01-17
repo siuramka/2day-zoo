@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ZooManagment.Business.Services;
 using ZooManagment.Domain.Dtos.Enclosure;
+using ZooManagment.Domain.Interfaces.Services;
 using ZooManagment.Domain.Models;
 
 namespace ZooManagment.API.Controllers;
@@ -9,9 +10,9 @@ namespace ZooManagment.API.Controllers;
 [Route("/api/enclosures")]
 public class EnclosureController : ControllerBase
 {
-    private EnclosureService _enclosureService;
+    private IEnclosureService _enclosureService;
 
-    public EnclosureController(EnclosureService enclosureService)
+    public EnclosureController(IEnclosureService enclosureService)
     {
         _enclosureService = enclosureService;
     }
