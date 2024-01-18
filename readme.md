@@ -11,3 +11,6 @@ dotnet ef database update --project ZooManagment.DataAccess --startup-project Zo
 ```
 
 Check for connection string in the appsettings.development.json
+
+
+The code lacks unit tests
